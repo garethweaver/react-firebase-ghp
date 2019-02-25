@@ -1,0 +1,27 @@
+@import '../../styles/modules'
+
+.Todo
+  display: block
+  display: flex
+
+  label
+    cursor: pointer
+    padding: 15px 20px
+    flex: 1 1 auto
+    transition: color 0.2s
+
+    &.done
+      text-decoration: line-through
+      color: $color-text-light
+
+  input
+    margin-right: 15px
+
+  &:hover
+    background: rgba($brand-primary, 0.1)
+
+  .btn.btn-icon
+    color: $color-text-light
+
+    &:hover
+      color: #ED776E

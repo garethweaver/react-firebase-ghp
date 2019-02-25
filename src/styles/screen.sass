@@ -1,0 +1,32 @@
+@import './modules'
+
+body
+  margin: 0
+  background: $color-body
+  color: $color-text-default
+  font-family: 'Open Sans', sans-serif
+
+input
+  font-family: 'Open Sans', sans-serif
+
+.page-wrap
+  display: flex
+  align-items: center
+  justify-content: center
+  min-height: 100vh
+  box-sizing: border-box
+  padding: 50px 10px
+
+.btn
+  border: none
+  background: none
+  cursor: pointer
+
+  &.btn-icon
+    padding: 15px 20px
+
+    i
+      transition: transform 0.1s
+
+    &:hover i
+      transform: scale(1.4)
