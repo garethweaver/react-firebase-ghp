@@ -4,7 +4,7 @@ import './todo.sass'
 
 class Todo extends Component {
 
-  toggleTodo(event) {
+  toggleTodo() {
     let todo = {
       ...this.props.todo,
       done: !this.props.todo.done,
@@ -17,8 +17,7 @@ class Todo extends Component {
       .set(todo)
   }
 
-  deleteTodo(event) {
-    event.preventDefault()
+  deleteTodo() {
     this.props.firebase
       .todo(this.props.todo.id)
       .remove()
@@ -31,13 +30,13 @@ class Todo extends Component {
           <input
             type="checkbox"
             checked={this.props.todo.done}
-            onChange={(event) => this.toggleTodo(event)} />
+            onChange={(e) => this.toggleTodo()} />
           <span>
             {this.props.todo.text}
           </span>
         </label>
         <button
-          onClick={(event) => this.deleteTodo(event)}
+          onClick={(e) => this.deleteTodo()}
           className="btn btn-icon">
           <i className="fas fa-times" />
         </button>
