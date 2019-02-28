@@ -1,19 +1,23 @@
 @import '../../styles/modules'
 
 .Header
-  padding: 20px 20px
   background: $brand-primary
   color: white
   position: relative
+  transition: background 0.3s
+  display: flex
+
+  div
+    padding: 20px
+    flex: 1 1 auto
+
+  &.theme--secondary
+    background: $brand-secondary
+
+  &.theme--tertiary
+    background: $brand-tertiary
 
   .btn
-    position: absolute
-    top: 0
-    right: 0
-    bottom: 0
-    padding: 20px
-    background: rgba(black, 0.08)
-    cursor: pointer
     color: white
 
     &:hover
