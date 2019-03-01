@@ -30,7 +30,7 @@ class TodoList extends Component {
     let todos = []
     if (snapshot.val()) {
       todos = Object.keys(snapshot.val())
-        .map((i) => {
+        .map(i => {
           return {
             id: i,
             ...snapshot.val()[i],
