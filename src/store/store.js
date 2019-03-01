@@ -7,6 +7,7 @@ const initialState = {
     'secondary',
     'tertiary',
   ],
+  user: null,
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -18,6 +19,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         theme: theme,
+      }
+    case 'SET_USER':
+      return {
+        ...state,
+        user: action.payload,
       }
     default:
       return state

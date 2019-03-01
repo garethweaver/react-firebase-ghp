@@ -14,7 +14,7 @@ class Header extends Component {
           Header
           theme--${this.props.themeChoices[this.props.theme]}
         `}>
-        <div>Logged in</div>
+        <div>{this.props.user.email}</div>
         <Clicker
           onClick={this.props.onSwitchClick}
           icon="far fa-clone" />
@@ -27,14 +27,15 @@ class Header extends Component {
 
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     theme: state.theme,
     themeChoices: state.themeChoices,
+    user: state.user,
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     onSwitchClick: () => dispatch(CYCLE_THEME),
   }

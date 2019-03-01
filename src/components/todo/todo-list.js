@@ -17,20 +17,28 @@ class TodoList extends Component {
   componentDidMount() {
     this.props.firebase
       .todos()
-      .on('value', snapshot => {
-        let todos = []
-        if (snapshot.val()) {
-          todos = Object.keys(snapshot.val())
-            .map((i) => {
-              return {
-                id: i,
-                ...snapshot.val()[i],
-              }
-            }
-          )
+      .on('value', this.handleTodos)
+  }
+
+  componentWillUnmount() {
+    this.props.firebase
+      .todos()
+      .off()
+  }
+
+  handleTodos = snapshot => {
+    let todos = []
+    if (snapshot.val()) {
+      todos = Object.keys(snapshot.val())
+        .map((i) => {
+          return {
+            id: i,
+            ...snapshot.val()[i],
+          }
         }
-        this.setState({todos})
-      })
+      )
+    }
+    this.setState({todos})
   }
 
   getTodos() {
