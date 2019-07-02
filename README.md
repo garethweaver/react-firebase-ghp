@@ -1,5 +1,7 @@
 # React Firebase Demo App
 
+<img src="https://raw.githubusercontent.com/garethweaver/react-firebase-ghp/master/screenshot.jpg" width="400" />
+
 [Visit the site](https://goo.gl/N23q2S) on GHP.
 
 ## Requirements
